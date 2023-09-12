@@ -13,7 +13,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::paginate(10);
         return response()->json($projects);
     }
 
@@ -30,7 +30,9 @@ class ProjectController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $project = Project::find($id);
+        if (!$project) return response(null, 404);
+        return response()->json($project);
     }
 
     /**
