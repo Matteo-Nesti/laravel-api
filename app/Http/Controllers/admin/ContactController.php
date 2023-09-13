@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
-    public function message()
+    public function message(Request $request)
 {
  $mail = new ContactMail();
  Mail::to(env('MAIL_TO_ADDRESS'))->send($mail);
