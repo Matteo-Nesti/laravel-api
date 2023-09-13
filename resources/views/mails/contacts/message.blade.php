@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>New Message</h1>
+    <p>{{$content}}</p>
 </body>
 </html>
